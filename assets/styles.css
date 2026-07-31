@@ -35,7 +35,7 @@ a:hover { color: #8debf4; }
   height: 2.25rem;
   margin-inline-end: .65rem;
   border-radius: .7rem;
-  background: url("app-icon.png") center / cover no-repeat;
+  background: url("app-icon.webp") center / cover no-repeat;
   box-shadow: 0 0 1rem rgb(66 217 232 / .24);
   color: transparent;
   font-size: 0;
