@@ -29,7 +29,18 @@ a:hover { color: #8debf4; }
 .header-inner, main, .footer-inner { width: min(calc(100% - 2rem), var(--max)); margin-inline: auto; }
 .header-inner { min-height: 4.25rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
 .brand { color: var(--text); text-decoration: none; font-weight: 800; letter-spacing: .01em; }
-.brand-mark { display: inline-grid; place-items: center; width: 2rem; height: 2rem; margin-inline-end: .65rem; border: 1px solid var(--cyan); border-radius: .65rem; color: var(--cyan); box-shadow: 0 0 1rem rgb(66 217 232 / .2); }
+.brand-mark {
+  display: inline-block;
+  width: 2.25rem;
+  height: 2.25rem;
+  margin-inline-end: .65rem;
+  border-radius: .7rem;
+  background: url("app-icon.png") center / cover no-repeat;
+  box-shadow: 0 0 1rem rgb(66 217 232 / .24);
+  color: transparent;
+  font-size: 0;
+  vertical-align: middle;
+}
 nav { display: flex; flex-wrap: wrap; gap: .55rem 1rem; font-size: .92rem; }
 main { padding-block: clamp(2rem, 5vw, 5rem); }
 .hero { max-width: 58rem; margin-bottom: 2.5rem; }
