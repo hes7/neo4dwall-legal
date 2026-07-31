@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="de" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Datenschutzerklärung — Neo 4D Wall">
+  <meta name="color-scheme" content="dark light">
+  <title>Datenschutzerklärung · Neo 4D Wall</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">4D</span>Neo 4D Wall</a>
+      <nav aria-label="Primary navigation">
+        <a href="../privacy.html">Privacy</a>
+        <a href="../terms.html">Terms</a>
+        <a href="../support.html">Support</a>
+      </nav>
+    </div>
+  </header>
+  <main id="content"><article class="document"><h1>Datenschutzerklärung</h1>
+<p class="meta">Letzte Aktualisierung: 19. Juli 2026</p>
+<h2><strong>1. Von uns erhobene Informationen</strong></h2>
+<p>Neo 4D Wall ist bestrebt, die Privatsphäre der Nutzer zu respektieren. Die App erfordert keine Kontoerstellung und enthält keine Werbung.</p>
+<h3><strong>Nicht erhobene sensible/personenbezogene Daten</strong></h3>
+<p>Name, Telefonnummer, genauer Standort, Kontakte und Dateien werden innerhalb der App nicht automatisch erhoben. Sendet ein Nutzer uns eine E-Mail für Support, eine Fehlermeldung oder eine Urheberrechtsanfrage, werden E-Mail-Adresse und Nachrichteninhalt ausschließlich zur Bearbeitung der jeweiligen Anfrage verarbeitet.</p>
+<h3><strong>Technische Informationen, die erhoben werden können</strong></h3>
+<ul><li>Gerätemodell und Betriebssystemversion</li><li>Absturzprotokolle über die Google Play Console</li><li>Anonyme Nutzungsanalyse über Firebase Analytics (Google LLC): aufgerufene Bildschirme, Sitzungsdauer sowie Öffnungs- und Schließereignisse der App. Sämtliche Daten werden anonymisiert und aggregiert.</li><li>Bereitstellung und Zugriffskontrolle: Hintergrundbild-Dateien werden in einem privaten Cloudflare-R2-Bucket gespeichert und über einen Cloudflare Worker ausgeliefert. Anfragen für geschützte Inhalte enthalten kurzlebige Sicherheitstoken.</li></ul>
+<p>✅ Neo 4D Wall enthält keine Werbung und verwendet kein Werbe-SDK.</p>
+<h2><strong>2. Editor — Nutzerinhalte</strong></h2>
+<p>Mit dem Editor erstellte Hintergrundbilder werden ausschließlich lokal auf dem Gerät des Nutzers gespeichert. Die App lädt diese Inhalte nicht auf einen Server hoch, übermittelt sie nicht und gibt sie nicht weiter. Die Inhalte bleiben privat, sofern der Nutzer nicht ausdrücklich eine externe Weitergabe auswählt.</p>
+<h2><strong>3. Drittanbieterdienste</strong></h2>
+<p>Die App verwendet ausschließlich die folgenden Drittanbieterdienste:</p>
+<ul><li>Firebase Analytics (Google LLC) — Anonyme Nutzungsstatistiken; Firebase App Check mit Google Play Integrity — technische Attestierung, die dabei hilft zu prüfen, ob geschützte Anfragen von der authentischen App stammen.</li><li>Cloudflare Worker und privates Cloudflare R2 (Cloudflare, Inc.) — Geschützte Bereitstellung von Hintergrundbild-Inhalten und Zugriffskontrolle.</li><li>Google Play Billing und Google Play Developer API (Google LLC) — Pro-Abonnements und Kaufvorgänge; serverseitige Prüfung von Kauftoken vor der Gewährung der Pro-Berechtigung.</li></ul>
+<p>✅ Sicherheits-, App-Check-, Zugriffs- und Kauftoken werden ausschließlich zum Schutz des Dienstes und zur Prüfung der Pro-Berechtigung verwendet; sie werden nicht für Werbung oder Marketing genutzt. Es werden kein Werbenetzwerk, kein Tracking-SDK und kein Marketing-SDK verwendet.</p>
+<h2><strong>4. Berechtigungen</strong></h2>
+
+    <div class="table-wrap" role="region" aria-label="Scrollable table" tabindex="0">
+      <table>
+        <thead><tr><th scope="col">Berechtigung</th><th scope="col">Warum sie erforderlich ist</th></tr></thead>
+        <tbody><tr><td>INTERNET</td><td>Zum sicheren Herunterladen von Hintergrundbild-Inhalten über Cloudflare Worker und privates Cloudflare R2, zur Prüfung geschützter Anfragen über Firebase App Check mit Google Play Integrity und für anonyme Nutzungsanalysen über Firebase Analytics</td></tr><tr><td>ACCESS_NETWORK_STATE</td><td>Zur Prüfung der Verbindung vor dem Herunterladen, um Datenvolumen zu sparen</td></tr><tr><td>POST_NOTIFICATIONS</td><td>Benachrichtigungen über neue Sammlungen (optional und deaktivierbar)</td></tr><tr><td>WAKE_LOCK</td><td>Um kurzzeitig zu verhindern, dass das Gerät in den Ruhemodus wechselt, bis ein automatischer Hintergrundbildwechsel im Hintergrund abgeschlossen ist (wird von einer Systembibliothek verwendet; der Bildschirm bleibt dadurch nicht eingeschaltet)</td></tr><tr><td>RECEIVE_BOOT_COMPLETED</td><td>Um den automatischen Wechsler nach einem Neustart des Geräts erneut zu starten</td></tr><tr><td>SCHEDULE_EXACT_ALARM</td><td>Optionaler Sonderzugriff unter Android 12 und höher, der nur verwendet wird, wenn der Nutzer eine zeitnähere Planung automatischer Hintergrundwechsel aktiviert. Er hilft, Wechsel näher am ausgewählten Intervall auszulösen; aufgrund von Systembeschränkungen kann es dennoch zu kurzen Verzögerungen kommen. Wird der Zugriff verweigert, arbeitet die Funktion mit ungefährer Zeitplanung weiter; der Zugriff kann jederzeit in den Systemeinstellungen widerrufen werden.</td></tr><tr><td>SET_WALLPAPER / SET_WALLPAPER_HINTS / BIND_WALLPAPER</td><td>Erforderlich für die grundlegende Live-Hintergrund-Funktion und die korrekte Größenanpassung auf dem Bildschirm</td></tr><tr><td>VIBRATE</td><td>Für eine kurze haptische Bestätigung von 20 ms, wenn Vorgänge wie Herunterladen oder Anwenden abgeschlossen sind</td></tr></tbody>
+      </table>
+    </div>
+<h2><strong>5. Datenschutz von Kindern</strong></h2>
+<p>Neo 4D Wall richtet sich nicht an Kinder unter 13 Jahren. Personenbezogene Daten von Kindern werden nicht wissentlich erhoben. Eltern oder Erziehungsberechtigte, die feststellen, dass ein Kind personenbezogene Daten bereitgestellt hat, können uns unter <a href="mailto:neo4dwall@gmail.com">neo4dwall@gmail.com</a> kontaktieren.</p>
+<h2><strong>6. Datensicherheit</strong></h2>
+<p>Auch wenn die App keine personenbezogenen Nutzerdaten speichert, werden Verbindungen zu Google Play, Firebase und Cloudflare Worker über HTTPS hergestellt. Zugriffstoken für geschützte Inhalte sind kurzlebig.</p>
+<ul><li>Die im Rahmen von Firebase Analytics verarbeiteten nutzer- und ereignisbezogenen Daten werden entsprechend dem in der Google-Analytics-Property festgelegten Aufbewahrungszeitraum gespeichert und nach dessen Ablauf automatisch von Google gelöscht. Der Aufbewahrungszeitraum wird über die Google-Analytics-Einstellungen verwaltet.</li><li>Im Rahmen von Google Play Android Vitals können Absturz- und ANR-Daten von Google von den Geräten der Nutzer erhoben werden, die die Freigabe von Nutzungs- und Diagnosedaten aktiviert haben. Der Entwickler kann über die Play Console auf die Daten der letzten 90 Tage zugreifen und speichert sie nicht zusätzlich auf eigenen Servern. Die Verarbeitung und Aufbewahrung dieser Daten durch Google unterliegt den jeweils geltenden Nutzungsbedingungen und Datenaufbewahrungsrichtlinien von Google.</li></ul>
+<h2><strong>7. Datenweitergabe</strong></h2>
+<p>Neo 4D Wall verkauft Nutzerdaten nicht an Dritte und gibt sie nicht zu Marketingzwecken weiter. Nur die oben genannten technischen Dienstleister — Cloudflare Worker und privates Cloudflare R2 (Cloudflare, Inc.); Firebase Analytics und Firebase App Check mit Google Play Integrity (Google LLC); sowie Google Play Billing und Google Play Developer API (Google LLC) — dürfen die begrenzten technischen, Sicherheitsattestierungs- oder Kaufprüfungsdaten verarbeiten, die zur Erbringung ihrer Dienste erforderlich sind.</p>
+<h2><strong>8. Rechte der Nutzer</strong></h2>
+<p>Nutzer haben folgende Rechte:</p>
+<ul><li>Die Datenerhebung durch Deinstallation der App zu beenden.</li><li>Den Cache über die App-Einstellungen zu löschen.</li><li>Das Abonnement über Google Play zu kündigen.</li><li>Datenschutzbezogene Fragen an <a href="mailto:neo4dwall@gmail.com">neo4dwall@gmail.com</a> zu senden.</li></ul>
+<p><strong>Hinweis zu KVKK und DSGVO: </strong>Nach dem türkischen Gesetz Nr. 6698 zum Schutz personenbezogener Daten (KVKK) ist Neo 4D Wall der Verantwortliche. Gemäß Artikel 11 des KVKK haben Nutzer das Recht zu erfahren, ob ihre personenbezogenen Daten verarbeitet werden, Auskunft zu verlangen und die Berichtigung oder Löschung zu beantragen. Nutzer in der Europäischen Union können zudem ihre Rechte auf Auskunft, Berichtigung, Löschung und Widerspruch nach der DSGVO ausüben. Sämtliche Anträge können an <a href="mailto:neo4dwall@gmail.com">neo4dwall@gmail.com</a> gerichtet werden.</p>
+<h2><strong>9. Änderungen</strong></h2>
+<p>Diese Datenschutzerklärung kann von Zeit zu Zeit aktualisiert werden. Die aktuelle Fassung wird in der App und/oder auf der offiziellen Veröffentlichungsseite veröffentlicht. Über wesentliche Änderungen können Nutzer nach Möglichkeit durch geeignete Methoden informiert werden.</p>
+<h2><strong>10. Kontakt</strong></h2>
+<p>Bei Fragen zum Datenschutz: <a href="mailto:neo4dwall@gmail.com">neo4dwall@gmail.com</a></p>
+<h2><strong>Urheberrecht</strong></h2>
+<p>© 2026 Neo 4D Wall. Alle Rechte vorbehalten.</p></article>
+    <section aria-labelledby="language-title">
+    <h2 id="language-title">Languages</h2>
+    <ul class="language-list"><li><a href="../ar/privacy.html" hreflang="ar">العربية</a></li><li><a href="../de/privacy.html" hreflang="de">Deutsch</a></li><li><a href="../en/privacy.html" hreflang="en">English</a></li><li><a href="../es/privacy.html" hreflang="es">Español</a></li><li><a href="../fr/privacy.html" hreflang="fr">Français</a></li><li><a href="../hi/privacy.html" hreflang="hi">हिन्दी</a></li><li><a href="../it/privacy.html" hreflang="it">Italiano</a></li><li><a href="../ja/privacy.html" hreflang="ja">日本語</a></li><li><a href="../ru/privacy.html" hreflang="ru">Русский</a></li><li><a href="../sv/privacy.html" hreflang="sv">Svenska</a></li><li><a href="../tr/privacy.html" hreflang="tr">Türkçe</a></li></ul>
+  </section></main>
+  <footer><div class="footer-inner"><span>© Neo 4D Wall</span><a href="mailto:neo4dwall@gmail.com">neo4dwall@gmail.com</a></div></footer>
+</body>
+</html>

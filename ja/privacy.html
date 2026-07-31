@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="プライバシーポリシー — Neo 4D Wall">
+  <meta name="color-scheme" content="dark light">
+  <title>プライバシーポリシー · Neo 4D Wall</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">4D</span>Neo 4D Wall</a>
+      <nav aria-label="Primary navigation">
+        <a href="../privacy.html">Privacy</a>
+        <a href="../terms.html">Terms</a>
+        <a href="../support.html">Support</a>
+      </nav>
+    </div>
+  </header>
+  <main id="content"><article class="document"><h1>プライバシーポリシー</h1>
+<p class="meta">最終更新日：2026年7月19日</p>
+<h2><strong>1. 収集する情報</strong></h2>
+<p>Neo 4D Wall は、ユーザーのプライバシーを尊重することを目的としています。本アプリはアカウント作成を必要とせず、広告も含みません。</p>
+<h3><strong>収集しない機微情報・個人データ</strong></h3>
+<p>氏名、電話番号、正確な位置情報、連絡先、ファイルは、アプリ内で自動的に収集されません。ユーザーがサポート、不具合報告または著作権に関する請求のためにメールを送信した場合、メールアドレスおよびメッセージ内容は、該当する問い合わせへの対応のみを目的として処理されます。</p>
+<h3><strong>収集される可能性のある技術情報</strong></h3>
+<ul><li>端末のモデルおよびOSのバージョン</li><li>Google Play Consoleを通じたクラッシュログ</li><li>Firebase Analytics（Google LLC）を通じた匿名の利用分析：閲覧した画面、セッション時間、アプリの起動・終了イベント。すべてのデータは匿名化および集計されます。</li><li>コンテンツ配信とアクセス制御：壁紙ファイルは非公開のCloudflare R2バケットに保存され、Cloudflare Workerを介して配信されます。保護されたコンテンツへのリクエストには、有効期間の短いセキュリティトークンが含まれます。</li></ul>
+<p>✅ Neo 4D Wall には広告がなく、広告SDKも使用していません。</p>
+<h2><strong>2. エディター — ユーザーコンテンツ</strong></h2>
+<p>エディターで作成された壁紙は、ユーザーの端末内にのみローカル保存されます。アプリは、これらのコンテンツをサーバーにアップロード、送信または共有しません。ユーザーが明示的に外部共有を選択しない限り、コンテンツは非公開のままです。</p>
+<h2><strong>3. 第三者サービス</strong></h2>
+<p>本アプリは、以下の第三者サービスのみを使用します。</p>
+<ul><li>Firebase Analytics（Google LLC）— 匿名の利用統計。Google Play Integrityを使用するFirebase App Check — 保護されたリクエストが正規のアプリから送信されたことを確認するための技術的アテステーション。</li><li>Cloudflare Workerおよび非公開のCloudflare R2（Cloudflare, Inc.）— 壁紙コンテンツの保護された配信とアクセス制御。</li><li>Google Play BillingおよびGoogle Play Developer API（Google LLC）— Proサブスクリプションおよび購入処理。Pro利用権を付与する前の購入トークンのサーバー側検証。</li></ul>
+<p>✅ セキュリティ、App Check、アクセスおよび購入トークンは、サービスの保護とPro利用権の確認のためにのみ使用され、広告やマーケティングには使用されません。広告ネットワーク、トラッキングSDK、マーケティングSDKは使用していません。</p>
+<h2><strong>4. 権限</strong></h2>
+
+    <div class="table-wrap" role="region" aria-label="Scrollable table" tabindex="0">
+      <table>
+        <thead><tr><th scope="col">権限</th><th scope="col">必要な理由</th></tr></thead>
+        <tbody><tr><td>INTERNET</td><td>Cloudflare Workerおよび非公開のCloudflare R2を介して壁紙コンテンツを安全にダウンロードし、Google Play Integrityを使用するFirebase App Checkで保護されたリクエストを確認し、Firebase Analyticsで匿名の利用分析を行うため</td></tr><tr><td>ACCESS_NETWORK_STATE</td><td>データ通信量を節約するため、ダウンロード前に接続状態を確認するため</td></tr><tr><td>POST_NOTIFICATIONS</td><td>新しいコレクションに関する通知（任意で、無効にできます）</td></tr><tr><td>WAKE_LOCK</td><td>バックグラウンドでの自動壁紙変更が完了するまで、端末がスリープ状態に入るのを短時間防ぐため（システムライブラリが使用し、画面を点灯状態に保つものではありません）</td></tr><tr><td>RECEIVE_BOOT_COMPLETED</td><td>端末の再起動後に自動変更機能を再起動するため</td></tr><tr><td>SCHEDULE_EXACT_ALARM</td><td>ユーザーが壁紙の自動変更を選択した間隔により近づける設定を有効にした場合にのみ使用する、Android 12以降の任意の特別なアクセスです。選択した間隔により近いタイミングで変更を実行するのに役立ちますが、システムの制約により多少遅れることがあります。アクセスを許可しなくても、おおよその時刻でのスケジュールにより機能は引き続き動作し、アクセスはシステム設定からいつでも取り消せます。</td></tr><tr><td>SET_WALLPAPER / SET_WALLPAPER_HINTS / BIND_WALLPAPER</td><td>ライブ壁紙の基本機能および画面上での適切なサイズ調整に必要です</td></tr><tr><td>VIBRATE</td><td>ダウンロードや適用などの処理が完了した際に、20ミリ秒の短い触覚フィードバックを行うため</td></tr></tbody>
+      </table>
+    </div>
+<h2><strong>5. 子どものプライバシー</strong></h2>
+<p>Neo 4D Wall は13歳未満の子どもを対象としていません。子どもの個人データを意図的に収集することはありません。子どもが個人情報を提供したことを保護者が確認した場合は、<a href="mailto:neo4dwall@gmail.com">neo4dwall@gmail.com</a> までご連絡ください。</p>
+<h2><strong>6. データセキュリティ</strong></h2>
+<p>本アプリはユーザーの個人データを保存しませんが、Google Play、FirebaseおよびCloudflare Workerとの通信にはHTTPSが使用されます。保護されたコンテンツのアクセストークンは有効期間が短く設定されています。</p>
+<ul><li>Firebase Analytics の対象となるユーザー単位およびイベント単位のデータは、Google Analytics プロパティで設定されたデータ保持期間に従って保存され、期間終了後に Google によって自動的に削除されます。保持期間は Google Analytics の設定から管理されます。</li><li>Google Play Android Vitals では、使用状況データと診断データの共有を有効にしているユーザーの端末から、クラッシュおよび ANR データが Google によって収集される場合があります。開発者は Play Console で直近 90 日間のデータにアクセスできますが、これらのデータを独自のサーバーに別途保存しません。Google によるこれらのデータの処理および保存には、Google の該当する利用規約およびデータ保持ポリシーが適用されます。</li></ul>
+<h2><strong>7. データ共有</strong></h2>
+<p>Neo 4D Wallは、ユーザーデータを第三者に販売せず、マーケティング目的で共有しません。上記の技術サービス提供者であるCloudflare Workerおよび非公開のCloudflare R2（Cloudflare, Inc.）、Firebase AnalyticsおよびGoogle Play Integrityを使用するFirebase App Check（Google LLC）、Google Play BillingおよびGoogle Play Developer API（Google LLC）のみが、サービス提供に必要な限定的な技術データ、セキュリティアテステーションデータまたは購入検証データを処理する場合があります。</p>
+<h2><strong>8. ユーザーの権利</strong></h2>
+<p>ユーザーには以下の権利があります。</p>
+<ul><li>アプリをアンインストールしてデータ収集を停止すること。</li><li>アプリ設定からキャッシュを消去すること。</li><li>Google Playを通じてサブスクリプションを解約すること。</li><li>プライバシーに関する質問を<a href="mailto:neo4dwall@gmail.com">neo4dwall@gmail.com</a>に送ること。</li></ul>
+<p><strong>KVKKおよびGDPRに関するお知らせ：</strong>Türkiyeの個人データ保護法第6698号（KVKK）に基づき、Neo 4D Wallはデータ管理者です。KVKK第11条により、ユーザーは、自己の個人データが処理されているかを確認し、情報を請求し、訂正または削除を求める権利を有します。欧州連合のユーザーは、GDPRに基づくアクセス、訂正、削除および異議申立ての権利も行使できます。すべての請求は<a href="mailto:neo4dwall@gmail.com">neo4dwall@gmail.com</a>に提出できます。</p>
+<h2><strong>9. 変更</strong></h2>
+<p>本プライバシーポリシーは随時更新される場合があります。最新版はアプリ内および／または公式公開ページに掲載されます。重要な変更が行われた場合、可能な範囲で適切な方法によりユーザーへ通知することがあります。</p>
+<h2><strong>10. お問い合わせ</strong></h2>
+<p>プライバシーに関するお問い合わせ：<a href="mailto:neo4dwall@gmail.com">neo4dwall@gmail.com</a></p>
+<h2><strong>著作権</strong></h2>
+<p>© 2026 Neo 4D Wall. すべての権利を留保します。</p></article>
+    <section aria-labelledby="language-title">
+    <h2 id="language-title">Languages</h2>
+    <ul class="language-list"><li><a href="../ar/privacy.html" hreflang="ar">العربية</a></li><li><a href="../de/privacy.html" hreflang="de">Deutsch</a></li><li><a href="../en/privacy.html" hreflang="en">English</a></li><li><a href="../es/privacy.html" hreflang="es">Español</a></li><li><a href="../fr/privacy.html" hreflang="fr">Français</a></li><li><a href="../hi/privacy.html" hreflang="hi">हिन्दी</a></li><li><a href="../it/privacy.html" hreflang="it">Italiano</a></li><li><a href="../ja/privacy.html" hreflang="ja">日本語</a></li><li><a href="../ru/privacy.html" hreflang="ru">Русский</a></li><li><a href="../sv/privacy.html" hreflang="sv">Svenska</a></li><li><a href="../tr/privacy.html" hreflang="tr">Türkçe</a></li></ul>
+  </section></main>
+  <footer><div class="footer-inner"><span>© Neo 4D Wall</span><a href="mailto:neo4dwall@gmail.com">neo4dwall@gmail.com</a></div></footer>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="sv" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Integritetspolicy — Neo 4D Wall">
+  <meta name="color-scheme" content="dark light">
+  <title>Integritetspolicy · Neo 4D Wall</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">4D</span>Neo 4D Wall</a>
+      <nav aria-label="Primary navigation">
+        <a href="../privacy.html">Privacy</a>
+        <a href="../terms.html">Terms</a>
+        <a href="../support.html">Support</a>
+      </nav>
+    </div>
+  </header>
+  <main id="content"><article class="document"><h1>Integritetspolicy</h1>
+<p class="meta">Senast uppdaterad: 19 juli 2026</p>
+<h2><strong>1. Information som vi samlar in</strong></h2>
+<p>Neo 4D Wall strävar efter att respektera användarnas integritet. Appen kräver inte att ett konto skapas och innehåller ingen reklam.</p>
+<h3><strong>Känsliga/personliga uppgifter som vi inte samlar in</strong></h3>
+<p>Namn, telefonnummer, exakt plats, kontakter och filer samlas inte in automatiskt i appen. Om en användare skickar e-post till oss för support, en felrapport eller en upphovsrättsbegäran behandlas e-postadressen och meddelandets innehåll endast för att besvara den aktuella begäran.</p>
+<h3><strong>Teknisk information som kan samlas in</strong></h3>
+<ul><li>Enhetsmodell och operativsystemsversion</li><li>Kraschloggar via Google Play Console</li><li>Anonym användningsanalys via Firebase Analytics (Google LLC): visade skärmar, sessionslängd och händelser när appen öppnas/stängs. Alla uppgifter anonymiseras och aggregeras.</li><li>Innehållsleverans och åtkomstkontroll: filer med bakgrundsbilder lagras i en privat Cloudflare R2-bucket och levereras via Cloudflare Worker. Begäranden om skyddat innehåll innehåller kortlivade säkerhetstoken.</li></ul>
+<p>✅ Neo 4D Wall innehåller ingen reklam och använder inget reklam-SDK.</p>
+<h2><strong>2. Redigeraren — Användarinnehåll</strong></h2>
+<p>Bakgrundsbilder som skapas med Redigeraren lagras endast lokalt på användarens enhet. Appen laddar inte upp, överför eller delar innehållet med en server. Innehållet förblir privat om användaren inte uttryckligen väljer att dela det externt.</p>
+<h2><strong>3. Tredjepartstjänster</strong></h2>
+<p>Appen använder endast följande tredjepartstjänster:</p>
+<ul><li>Firebase Analytics (Google LLC) — Anonym användningsstatistik; Firebase App Check med Google Play Integrity — teknisk attestering som hjälper till att verifiera att skyddade begäranden kommer från den autentiska appen.</li><li>Cloudflare Worker och privat Cloudflare R2 (Cloudflare, Inc.) — Skyddad leverans av bakgrundsbildsinnehåll och åtkomstkontroll.</li><li>Google Play Billing och Google Play Developer API (Google LLC) — Pro-abonnemang och köptransaktioner; verifiering på serversidan av köptoken innan Pro-behörighet beviljas.</li></ul>
+<p>✅ Säkerhets-, App Check-, åtkomst- och köptoken används endast för att skydda tjänsten och verifiera Pro-behörighet; de används inte för annonsering eller marknadsföring. Inget annonsnätverk, spårnings-SDK eller marknadsförings-SDK används.</p>
+<h2><strong>4. Behörigheter</strong></h2>
+
+    <div class="table-wrap" role="region" aria-label="Scrollable table" tabindex="0">
+      <table>
+        <thead><tr><th scope="col">Behörighet</th><th scope="col">Varför den behövs</th></tr></thead>
+        <tbody><tr><td>INTERNET</td><td>För att hämta bakgrundsbildsinnehåll säkert via Cloudflare Worker och privat Cloudflare R2, verifiera skyddade begäranden via Firebase App Check med Google Play Integrity och tillhandahålla anonym användningsanalys via Firebase Analytics</td></tr><tr><td>ACCESS_NETWORK_STATE</td><td>För att kontrollera anslutningen före nedladdning och därmed spara data</td></tr><tr><td>POST_NOTIFICATIONS</td><td>Aviseringar om nya samlingar (valfria och kan stängas av)</td></tr><tr><td>WAKE_LOCK</td><td>För att kortvarigt hindra enheten från att gå in i viloläge tills ett automatiskt byte av bakgrundsbild har slutförts i bakgrunden (används av ett systembibliotek; håller inte skärmen tänd)</td></tr><tr><td>RECEIVE_BOOT_COMPLETED</td><td>För att starta om den automatiska växlaren efter att enheten har startats om</td></tr><tr><td>SCHEDULE_EXACT_ALARM</td><td>Valfri särskild åtkomst i Android 12 och senare, som endast används när användaren aktiverar mer tidsnära schemaläggning av automatiska byten av bakgrundsbild. Den hjälper till att utlösa byten närmare det valda intervallet, men små fördröjningar kan ändå uppstå på grund av systembegränsningar. Om åtkomst nekas fortsätter funktionen med ungefärlig schemaläggning; åtkomsten kan när som helst återkallas i systeminställningarna.</td></tr><tr><td>SET_WALLPAPER / SET_WALLPAPER_HINTS / BIND_WALLPAPER</td><td>Krävs för grundläggande funktioner för livebakgrunder och korrekt storleksanpassning på skärmen</td></tr><tr><td>VIBRATE</td><td>För en kort haptisk bekräftelse på 20 ms när åtgärder som nedladdning eller tillämpning har slutförts</td></tr></tbody>
+      </table>
+    </div>
+<h2><strong>5. Barns integritet</strong></h2>
+<p>Neo 4D Wall riktar sig inte till barn under 13 år. Personuppgifter om barn samlas inte medvetet in. En förälder eller vårdnadshavare som upptäcker att ett barn har lämnat personuppgifter kan kontakta oss på <a href="mailto:neo4dwall@gmail.com">neo4dwall@gmail.com</a>.</p>
+<h2><strong>6. Datasäkerhet</strong></h2>
+<p>Även om appen inte lagrar personliga användaruppgifter använder kommunikationen med Google Play, Firebase och Cloudflare Worker HTTPS. Åtkomsttoken för skyddat innehåll är kortlivade.</p>
+<ul><li>Användar- och händelsedata som behandlas inom ramen för Firebase Analytics lagras enligt den lagringstid som har konfigurerats i Google Analytics-egendomen och raderas automatiskt av Google när perioden löper ut. Lagringstiden hanteras i inställningarna för Google Analytics.</li><li>Inom Google Play Android Vitals kan Google samla in krasch- och ANR-data från enheter som tillhör användare som har aktiverat delning av användnings- och diagnostikdata. Utvecklaren kan komma åt data för de senaste 90 dagarna via Play Console och lagrar inte dessa data separat på sina egna servrar. Googles behandling och lagring av uppgifterna omfattas av Googles tillämpliga användarvillkor och policyer för datalagring.</li></ul>
+<h2><strong>7. Datadelning</strong></h2>
+<p>Neo 4D Wall säljer inte användaruppgifter till tredje part och delar dem inte i marknadsföringssyfte. Endast de tekniska tjänsteleverantörer som anges ovan — Cloudflare Worker och privat Cloudflare R2 (Cloudflare, Inc.); Firebase Analytics och Firebase App Check med Google Play Integrity (Google LLC); samt Google Play Billing och Google Play Developer API (Google LLC) — får behandla de begränsade tekniska data, säkerhetsattesteringsdata eller köpverifieringsdata som krävs för att tillhandahålla deras tjänster.</p>
+<h2><strong>8. Användarnas rättigheter</strong></h2>
+<p>Användare har följande rättigheter:</p>
+<ul><li>Stoppa datainsamling genom att avinstallera appen.</li><li>Rensa cacheminnet via Appinställningar.</li><li>Avsluta abonnemanget via Google Play.</li><li>Skicka frågor om integritet till <a href="mailto:neo4dwall@gmail.com">neo4dwall@gmail.com</a>.</li></ul>
+<p><strong>Information om KVKK och GDPR: </strong>Enligt den turkiska lagen nr 6698 om skydd av personuppgifter (KVKK) är Neo 4D Wall personuppgiftsansvarig. Enligt artikel 11 i KVKK har användare rätt att få veta om deras personuppgifter behandlas, begära information och begära rättelse eller radering. Användare i Europeiska unionen kan även utöva sina rättigheter till tillgång, rättelse, radering och invändning enligt GDPR. Alla begäranden kan skickas till <a href="mailto:neo4dwall@gmail.com">neo4dwall@gmail.com</a>.</p>
+<h2><strong>9. Ändringar</strong></h2>
+<p>Denna Integritetspolicy kan uppdateras från tid till annan. Den aktuella versionen publiceras i appen och/eller på den officiella publiceringssidan. När det är möjligt kan användare informeras på lämpligt sätt när väsentliga ändringar görs.</p>
+<h2><strong>10. Kontakt</strong></h2>
+<p>För frågor om integritet: <a href="mailto:neo4dwall@gmail.com">neo4dwall@gmail.com</a></p>
+<h2><strong>Upphovsrätt</strong></h2>
+<p>© 2026 Neo 4D Wall. Alla rättigheter förbehållna.</p></article>
+    <section aria-labelledby="language-title">
+    <h2 id="language-title">Languages</h2>
+    <ul class="language-list"><li><a href="../ar/privacy.html" hreflang="ar">العربية</a></li><li><a href="../de/privacy.html" hreflang="de">Deutsch</a></li><li><a href="../en/privacy.html" hreflang="en">English</a></li><li><a href="../es/privacy.html" hreflang="es">Español</a></li><li><a href="../fr/privacy.html" hreflang="fr">Français</a></li><li><a href="../hi/privacy.html" hreflang="hi">हिन्दी</a></li><li><a href="../it/privacy.html" hreflang="it">Italiano</a></li><li><a href="../ja/privacy.html" hreflang="ja">日本語</a></li><li><a href="../ru/privacy.html" hreflang="ru">Русский</a></li><li><a href="../sv/privacy.html" hreflang="sv">Svenska</a></li><li><a href="../tr/privacy.html" hreflang="tr">Türkçe</a></li></ul>
+  </section></main>
+  <footer><div class="footer-inner"><span>© Neo 4D Wall</span><a href="mailto:neo4dwall@gmail.com">neo4dwall@gmail.com</a></div></footer>
+</body>
+</html>

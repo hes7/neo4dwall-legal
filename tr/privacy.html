@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="tr" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Gizlilik Politikası — Neo 4D Wall">
+  <meta name="color-scheme" content="dark light">
+  <title>Gizlilik Politikası · Neo 4D Wall</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">4D</span>Neo 4D Wall</a>
+      <nav aria-label="Primary navigation">
+        <a href="../privacy.html">Privacy</a>
+        <a href="../terms.html">Terms</a>
+        <a href="../support.html">Support</a>
+      </nav>
+    </div>
+  </header>
+  <main id="content"><article class="document"><h1>Gizlilik Politikası</h1>
+<p class="meta">Son Güncelleme: 19 Temmuz 2026</p>
+<h2><strong>1. Topladığımız Bilgiler</strong></h2>
+<p>Neo 4D Wall, kullanıcı gizliliğine saygı göstermeyi amaçlar. Uygulama hesap oluşturma gerektirmez ve reklam içermez.</p>
+<h3><strong>Toplamadığımız Hassas/Kişisel Veriler</strong></h3>
+<p>İsim, telefon numarası, hassas konum, kişiler ve dosyalar uygulama içinde otomatik olarak toplanmaz. Kullanıcı destek, hata bildirimi veya telif hakkı talebi için bize e-posta gönderirse, e-posta adresi ve mesaj içeriği yalnızca ilgili talebi yanıtlamak amacıyla işlenir.</p>
+<h3><strong>Toplanabilen Teknik Bilgiler</strong></h3>
+<ul><li>Cihaz modeli ve işletim sistemi sürümü</li><li>Çökme günlükleri (Google Play Console aracılığıyla)</li><li>Anonim kullanım analitiği — Firebase Analytics (Google LLC) aracılığıyla: görüntülenen ekranlar, oturum süresi, açılış/kapanış olayları. Tüm veriler anonimleştirilmiş ve toplulaştırılmıştır.</li><li>İçerik teslimatı ve erişim kontrolü — Duvar kağıdı dosyaları özel bir Cloudflare R2 bucket’ında saklanır ve Cloudflare Worker üzerinden sunulur. Korumalı içerik istekleri kısa ömürlü güvenlik belirteçleri içerir.</li></ul>
+<p>✅ Neo 4D Wall reklam içermez ve herhangi bir reklam SDK’sı kullanmaz.</p>
+<h2><strong>2. Editör — Kullanıcı İçeriği</strong></h2>
+<p>Editör özelliği ile oluşturulan duvar kağıtları yalnızca kullanıcının cihazında yerel olarak saklanır. Uygulama, bu içerikleri sunucuya yüklemez, göndermez veya paylaşmaz. İçerik, kullanıcı harici olarak paylaşmayı açıkça seçmedikçe gizli kalır.</p>
+<h2><strong>3. Üçüncü Taraf Hizmetleri</strong></h2>
+<p>Uygulama yalnızca aşağıdaki üçüncü taraf hizmetlerini kullanır:</p>
+<ul><li><strong>Firebase Analytics (Google LLC)</strong> — Anonim kullanım istatistikleri; <strong>Google Play Integrity ile Firebase App Check</strong> — korumalı isteklerin gerçek uygulamadan geldiğini doğrulamaya yardımcı olan teknik doğrulama.</li><li><strong>Cloudflare Worker ve özel Cloudflare R2 (Cloudflare, Inc.)</strong> — Duvar kağıdı içeriğinin korumalı olarak sunulması ve erişim kontrolü.</li><li><strong>Google Play Billing ve Google Play Developer API (Google LLC)</strong> — Pro abonelik ve satın alma işlemleri; Pro hakkı verilmeden önce satın alma belirteçlerinin sunucu tarafında doğrulanması.</li></ul>
+<p>✅ Güvenlik, App Check, erişim ve satın alma belirteçleri yalnızca hizmeti korumak ve Pro hakkını doğrulamak için kullanılır; reklam veya pazarlama amacıyla kullanılmaz. Reklam ağı, izleyici SDK veya pazarlama SDK’sı kullanılmamaktadır.</p>
+<h2><strong>4. İzinler</strong></h2>
+
+    <div class="table-wrap" role="region" aria-label="Scrollable table" tabindex="0">
+      <table>
+        <thead><tr><th scope="col">İzin</th><th scope="col">Neden Gerekli</th></tr></thead>
+        <tbody><tr><td>INTERNET</td><td>Cloudflare Worker ve özel Cloudflare R2 üzerinden duvar kağıdı içeriğini güvenli şekilde indirmek, Google Play Integrity ile Firebase App Check aracılığıyla korumalı istekleri doğrulamak ve Firebase Analytics ile anonim kullanım analitiği sağlamak için</td></tr><tr><td>ACCESS_NETWORK_STATE</td><td>Veri tasarrufu için indirmeden önce bağlantıyı kontrol etmek</td></tr><tr><td>POST_NOTIFICATIONS</td><td>Yeni koleksiyonlar için bildirim (isteğe bağlı, kapatılabilir)</td></tr><tr><td>WAKE_LOCK</td><td>Arka planda otomatik duvar kağıdı değişimi tamamlanana kadar cihazın uyku moduna geçmesini kısa süreliğine ertelemek için (sistem kütüphanesi tarafından kullanılır; ekranı açık tutmaz)</td></tr><tr><td>RECEIVE_BOOT_COMPLETED</td><td>Cihaz yeniden başlatıldıktan sonra otomatik değiştiriciyi yeniden başlatmak için</td></tr><tr><td>SCHEDULE_EXACT_ALARM</td><td>Yalnızca kullanıcı otomatik duvar kağıdı değişimleri için daha zamanında planlamayı etkinleştirdiğinde kullanılan, Android 12 ve üzerindeki isteğe bağlı özel erişimdir. Değişimlerin seçilen aralığa daha yakın zamanda tetiklenmesine yardımcı olur; ancak sistem kısıtlamaları nedeniyle küçük gecikmeler yine de olabilir. Erişim reddedilirse özellik yaklaşık zamanlamayla çalışmaya devam eder; erişim sistem ayarlarından her zaman iptal edilebilir.</td></tr><tr><td>SET_WALLPAPER / SET_WALLPAPER_HINTS / BIND_WALLPAPER</td><td>Canlı duvar kağıdı temel işlevi ve görselin ekrana doğru boyutlandırılması için zorunlu</td></tr><tr><td>VIBRATE</td><td>İndirme/uygulama gibi işlemler tamamlandığında kısa (20 ms) dokunsal onay geri bildirimi için</td></tr></tbody>
+      </table>
+    </div>
+<h2><strong>5. Çocukların Gizliliği</strong></h2>
+<p>Neo 4D Wall, 13 yaşın altındaki çocuklara yönelik değildir. Çocuklar hakkında bilerek kişisel veri toplanmaz. Bir ebeveyn veya vasi, çocuğunun kişisel bilgi sağladığını fark ederse <a href="mailto:neo4dwall@gmail.com">neo4dwall@gmail.com</a> adresinden bizimle iletişime geçebilir.</p>
+<h2><strong>6. Veri Güvenliği</strong></h2>
+<p>Uygulama kişisel kullanıcı verilerini saklamasa da Google Play, Firebase ve Cloudflare Worker ile iletişim HTTPS üzerinden gerçekleştirilir. Korumalı içerik erişim belirteçleri kısa ömürlüdür.</p>
+<ul><li>Firebase Analytics kapsamındaki kullanıcı ve olay düzeyindeki veriler, Google Analytics mülkünde belirlenen veri saklama süresine göre saklanır ve bu sürenin sonunda Google tarafından otomatik olarak silinir. Saklama süresi Google Analytics ayarları üzerinden yönetilir.</li><li>Google Play Android Vitals kapsamında çökme ve ANR verileri, kullanım ve tanılama verilerini paylaşmayı etkinleştirmiş kullanıcıların cihazlarından Google tarafından toplanabilir. Geliştirici bu verilere Play Console üzerinden son 90 günlük dönem için erişebilir ve bu verileri ayrıca kendi sunucularında saklamaz. Verilerin Google tarafından işlenmesi ve saklanması, Google’ın ilgili hizmet koşulları ve veri saklama politikalarına tabidir.</li></ul>
+<h2><strong>7. Veri Paylaşımı</strong></h2>
+<p>Neo 4D Wall, kullanıcı verilerini hiçbir üçüncü tarafa satmaz veya pazarlama amacıyla paylaşmaz. Yalnızca yukarıda belirtilen teknik hizmet sağlayıcıları — Cloudflare Worker ve özel Cloudflare R2 (Cloudflare, Inc.); Firebase Analytics ve Google Play Integrity ile Firebase App Check (Google LLC); Google Play Billing ve Google Play Developer API (Google LLC) — hizmetlerini sunmak için gereken sınırlı teknik, güvenlik doğrulaması veya satın alma doğrulama verilerini işleyebilir.</p>
+<h2><strong>8. Kullanıcı Hakları</strong></h2>
+<p>Kullanıcılar aşağıdaki haklara sahiptir:</p>
+<ul><li>Uygulamayı kaldırarak veri toplamasını durdurabilir.</li><li>Uygulama Ayarları üzerinden önbelleği temizleyebilir.</li><li>Google Play üzerinden aboneliğini iptal edebilir.</li><li>Gizlilikle ilgili sorularını <a href="mailto:neo4dwall@gmail.com">neo4dwall@gmail.com</a> adresine yöneltebilir.</li></ul>
+<p><strong>KVKK ve GDPR Bilgilendirmesi: </strong>6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) kapsamında veri sorumlusu Neo 4D Wall’dur. Kullanıcılar, KVKK’nın 11. maddesi uyarınca kişisel verilerinin işlenip işlenmediğini öğrenme, bilgi talep etme, düzeltilmesini veya silinmesini isteme haklarına sahiptir. Avrupa Birliği’ndeki kullanıcılar, GDPR kapsamındaki erişim, düzeltme, silme ve itiraz haklarını da kullanabilir. Tüm başvurular <a href="mailto:neo4dwall@gmail.com">neo4dwall@gmail.com</a> adresine yapılabilir.</p>
+<h2><strong>9. Değişiklikler</strong></h2>
+<p>Bu Gizlilik Politikası zaman zaman güncellenebilir. Güncel sürüm uygulama içinde ve/veya resmi yayın sayfasında yayımlanır. Önemli değişiklikler olması halinde, mümkün olduğunda uygun yöntemlerle bilgilendirme yapılabilir.</p>
+<h2><strong>10. İletişim</strong></h2>
+<p>Gizlilikle ilgili sorularınız için: <a href="mailto:neo4dwall@gmail.com">neo4dwall@gmail.com</a></p>
+<h2><strong>Telif Hakkı</strong></h2>
+<p>© 2026 Neo 4D Wall. Tüm hakları saklıdır.</p></article>
+    <section aria-labelledby="language-title">
+    <h2 id="language-title">Languages</h2>
+    <ul class="language-list"><li><a href="../ar/privacy.html" hreflang="ar">العربية</a></li><li><a href="../de/privacy.html" hreflang="de">Deutsch</a></li><li><a href="../en/privacy.html" hreflang="en">English</a></li><li><a href="../es/privacy.html" hreflang="es">Español</a></li><li><a href="../fr/privacy.html" hreflang="fr">Français</a></li><li><a href="../hi/privacy.html" hreflang="hi">हिन्दी</a></li><li><a href="../it/privacy.html" hreflang="it">Italiano</a></li><li><a href="../ja/privacy.html" hreflang="ja">日本語</a></li><li><a href="../ru/privacy.html" hreflang="ru">Русский</a></li><li><a href="../sv/privacy.html" hreflang="sv">Svenska</a></li><li><a href="../tr/privacy.html" hreflang="tr">Türkçe</a></li></ul>
+  </section></main>
+  <footer><div class="footer-inner"><span>© Neo 4D Wall</span><a href="mailto:neo4dwall@gmail.com">neo4dwall@gmail.com</a></div></footer>
+</body>
+</html>

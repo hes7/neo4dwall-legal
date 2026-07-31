@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="سياسة الخصوصية — Neo 4D Wall">
+  <meta name="color-scheme" content="dark light">
+  <title>سياسة الخصوصية · Neo 4D Wall</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">4D</span>Neo 4D Wall</a>
+      <nav aria-label="Primary navigation">
+        <a href="../privacy.html">Privacy</a>
+        <a href="../terms.html">Terms</a>
+        <a href="../support.html">Support</a>
+      </nav>
+    </div>
+  </header>
+  <main id="content"><article class="document"><h1>سياسة الخصوصية</h1>
+<p class="meta">آخر تحديث: 19 يوليو 2026</p>
+<h2><strong>1. المعلومات التي نجمعها</strong></h2>
+<p>يهدف Neo 4D Wall إلى احترام خصوصية المستخدم. ولا يتطلب التطبيق إنشاء حساب ولا يحتوي على إعلانات.</p>
+<h3><strong>البيانات الحساسة/الشخصية التي لا نجمعها</strong></h3>
+<p>لا يتم تلقائيًا جمع الاسم أو رقم الهاتف أو الموقع الدقيق أو جهات الاتصال أو الملفات داخل التطبيق. وإذا أرسل المستخدم إلينا بريدًا إلكترونيًا للحصول على دعم أو للإبلاغ عن خطأ أو لتقديم طلب متعلق بحقوق النشر، فلن تتم معالجة عنوان البريد الإلكتروني ومحتوى الرسالة إلا للرد على الطلب المعني.</p>
+<h3><strong>المعلومات التقنية التي قد يتم جمعها</strong></h3>
+<ul><li>طراز الجهاز وإصدار نظام التشغيل</li><li>سجلات الأعطال من خلال Google Play Console</li><li>تحليلات استخدام مجهولة الهوية من خلال Firebase Analytics (Google LLC): الشاشات التي تمت مشاهدتها، ومدة الجلسة، وأحداث فتح التطبيق وإغلاقه. يتم إخفاء هوية جميع البيانات وتجميعها.</li><li>تقديم المحتوى والتحكم في الوصول: تُخزَّن ملفات الخلفيات في حاوية Cloudflare R2 خاصة وتُقدَّم من خلال Cloudflare Worker. تتضمن طلبات المحتوى المحمي رموز أمان قصيرة العمر.</li></ul>
+<p>✅ لا يحتوي Neo 4D Wall على إعلانات ولا يستخدم أي حزمة SDK إعلانية.</p>
+<h2><strong>2. المحرر — محتوى المستخدم</strong></h2>
+<p>تُحفظ الخلفيات التي يتم إنشاؤها باستخدام المحرر محليًا فقط على جهاز المستخدم. ولا يرفع التطبيق هذا المحتوى إلى خادم ولا يرسله أو يشاركه معه. ويظل المحتوى خاصًا ما لم يختر المستخدم صراحةً مشاركته خارجيًا.</p>
+<h2><strong>3. خدمات الأطراف الثالثة</strong></h2>
+<p>يستخدم التطبيق خدمات الأطراف الثالثة التالية فقط:</p>
+<ul><li>Firebase Analytics (Google LLC) — إحصاءات استخدام مجهولة الهوية؛ وFirebase App Check مع Google Play Integrity — شهادة فنية للمساعدة في التحقق من أن طلبات المحتوى المحمي صادرة من التطبيق الأصلي.</li><li>Cloudflare Worker وCloudflare R2 الخاص (Cloudflare, Inc.) — تقديم محتوى الخلفيات المحمي والتحكم في الوصول.</li><li>Google Play Billing وGoogle Play Developer API (Google LLC) — اشتراكات Pro وعمليات الشراء؛ والتحقق من رموز الشراء على جانب الخادم قبل منح استحقاق Pro.</li></ul>
+<p>✅ تُستخدم رموز الأمان وApp Check والوصول والشراء فقط لحماية الخدمة والتحقق من استحقاق Pro، ولا تُستخدم للإعلانات أو التسويق. ولا يتم استخدام أي شبكة إعلانية أو حزمة SDK للتتبع أو حزمة SDK للتسويق.</p>
+<h2><strong>4. الأذونات</strong></h2>
+
+    <div class="table-wrap" role="region" aria-label="Scrollable table" tabindex="0">
+      <table>
+        <thead><tr><th scope="col">الإذن</th><th scope="col">سبب الحاجة إليه</th></tr></thead>
+        <tbody><tr><td>INTERNET</td><td>لتنزيل محتوى الخلفيات بأمان من خلال Cloudflare Worker وCloudflare R2 الخاص، والتحقق من طلبات المحتوى المحمي من خلال Firebase App Check مع Google Play Integrity، وتوفير تحليلات استخدام مجهولة الهوية من خلال Firebase Analytics</td></tr><tr><td>ACCESS_NETWORK_STATE</td><td>للتحقق من الاتصال قبل التنزيل بهدف توفير استهلاك البيانات</td></tr><tr><td>POST_NOTIFICATIONS</td><td>إشعارات بالمجموعات الجديدة (اختيارية ويمكن تعطيلها)</td></tr><tr><td>WAKE_LOCK</td><td>لمنع الجهاز مؤقتًا من الدخول في وضع السكون حتى يكتمل تغيير تلقائي للخلفية في الخلفية (تستخدمه مكتبة نظام؛ ولا يبقي الشاشة مضاءة)</td></tr><tr><td>RECEIVE_BOOT_COMPLETED</td><td>لإعادة تشغيل مبدّل الخلفيات التلقائي بعد إعادة تشغيل الجهاز</td></tr><tr><td>SCHEDULE_EXACT_ALARM</td><td>وصول خاص اختياري في Android 12 والإصدارات الأحدث، يُستخدم فقط عندما يفعّل المستخدم جدولة أكثر التزامًا بالوقت لتغييرات الخلفية التلقائية. يساعد على تشغيل التغييرات في وقت أقرب إلى الفاصل الزمني المختار، لكن قد تحدث تأخيرات طفيفة بسبب قيود النظام. إذا رُفض الوصول، تستمر الميزة في العمل بالجدولة التقريبية؛ ويمكن إلغاء الوصول في أي وقت من إعدادات النظام.</td></tr><tr><td>SET_WALLPAPER / SET_WALLPAPER_HINTS / BIND_WALLPAPER</td><td>مطلوب للوظائف الأساسية للخلفيات الحية ولضبط الحجم على الشاشة بصورة صحيحة</td></tr><tr><td>VIBRATE</td><td>لتقديم تأكيد لمسي قصير مدته 20 مللي ثانية عند اكتمال إجراءات مثل التنزيل أو التطبيق</td></tr></tbody>
+      </table>
+    </div>
+<h2><strong>5. خصوصية الأطفال</strong></h2>
+<p>لا يستهدف Neo 4D Wall الأطفال الذين تقل أعمارهم عن 13 عامًا. ولا يتم جمع بيانات شخصية عن الأطفال عن قصد. ويمكن لولي الأمر الذي يكتشف أن طفلًا قد قدّم معلومات شخصية التواصل معنا على <a href="mailto:neo4dwall@gmail.com">neo4dwall@gmail.com</a>.</p>
+<h2><strong>6. أمن البيانات</strong></h2>
+<p>على الرغم من أن التطبيق لا يخزّن بيانات شخصية للمستخدمين، فإن الاتصالات مع Google Play وFirebase وCloudflare Worker تستخدم HTTPS. رموز الوصول إلى المحتوى المحمي قصيرة العمر.</p>
+<ul><li>تُحفظ البيانات على مستوى المستخدم والحدث التي تتم معالجتها ضمن Firebase Analytics وفقًا لمدة الاحتفاظ بالبيانات المحددة في ملكية Google Analytics المرتبطة، وتحذفها Google تلقائيًا عند انتهاء تلك المدة. وتُدار مدة الاحتفاظ من خلال إعدادات Google Analytics.</li><li>ضمن Google Play Android Vitals، قد تجمع Google بيانات الأعطال وANR من أجهزة المستخدمين الذين فعّلوا مشاركة بيانات الاستخدام والتشخيص. يمكن للمطوّر الوصول إلى هذه البيانات في Play Console عن آخر 90 يومًا، ولا يخزّنها بصورة منفصلة على خوادمه الخاصة. تخضع معالجة Google لهذه البيانات والاحتفاظ بها لشروط الخدمة وسياسات الاحتفاظ بالبيانات المعمول بها لدى Google.</li></ul>
+<h2><strong>7. مشاركة البيانات</strong></h2>
+<p>لا يبيع Neo 4D Wall بيانات المستخدمين لأي طرف ثالث ولا يشاركها لأغراض تسويقية. ولا يجوز إلا لمقدمي الخدمات التقنية المذكورين أعلاه — Cloudflare Worker وCloudflare R2 الخاص (Cloudflare, Inc.)؛ وFirebase Analytics وFirebase App Check مع Google Play Integrity (Google LLC)؛ وGoogle Play Billing وGoogle Play Developer API (Google LLC) — معالجة البيانات التقنية المحدودة أو بيانات شهادة الأمان أو التحقق من الشراء اللازمة لتقديم خدماتهم.</p>
+<h2><strong>8. حقوق المستخدم</strong></h2>
+<p>للمستخدمين الحقوق التالية:</p>
+<ul><li>إيقاف جمع البيانات عن طريق إلغاء تثبيت التطبيق.</li><li>مسح ذاكرة التخزين المؤقت من خلال إعدادات التطبيق.</li><li>إلغاء الاشتراك من خلال Google Play.</li><li>إرسال الأسئلة المتعلقة بالخصوصية إلى <a href="mailto:neo4dwall@gmail.com">neo4dwall@gmail.com</a>.</li></ul>
+<p><strong>إشعار KVKK وGDPR: </strong>بموجب القانون التركي رقم 6698 بشأن حماية البيانات الشخصية (KVKK)، يُعد Neo 4D Wall مسؤول معالجة البيانات. ووفقًا للمادة 11 من قانون KVKK، يحق للمستخدمين معرفة ما إذا كانت بياناتهم الشخصية تتم معالجتها، وطلب المعلومات، وطلب تصحيح البيانات أو حذفها. كما يمكن للمستخدمين في الاتحاد الأوروبي ممارسة حقوق الوصول والتصحيح والحذف والاعتراض بموجب اللائحة العامة لحماية البيانات (GDPR). ويمكن تقديم جميع الطلبات إلى <a href="mailto:neo4dwall@gmail.com">neo4dwall@gmail.com</a>.</p>
+<h2><strong>9. التغييرات</strong></h2>
+<p>قد يتم تحديث سياسة الخصوصية هذه من وقت لآخر. ويتم نشر النسخة الحالية داخل التطبيق و/أو على صفحة النشر الرسمية. وعند الإمكان، قد يتم إبلاغ المستخدمين بوسائل مناسبة عند إجراء تغييرات جوهرية.</p>
+<h2><strong>10. التواصل</strong></h2>
+<p>للأسئلة المتعلقة بالخصوصية: <a href="mailto:neo4dwall@gmail.com">neo4dwall@gmail.com</a></p>
+<h2><strong>حقوق النشر</strong></h2>
+<p>© 2026 Neo 4D Wall. جميع الحقوق محفوظة.</p></article>
+    <section aria-labelledby="language-title">
+    <h2 id="language-title">Languages</h2>
+    <ul class="language-list"><li><a href="../ar/privacy.html" hreflang="ar">العربية</a></li><li><a href="../de/privacy.html" hreflang="de">Deutsch</a></li><li><a href="../en/privacy.html" hreflang="en">English</a></li><li><a href="../es/privacy.html" hreflang="es">Español</a></li><li><a href="../fr/privacy.html" hreflang="fr">Français</a></li><li><a href="../hi/privacy.html" hreflang="hi">हिन्दी</a></li><li><a href="../it/privacy.html" hreflang="it">Italiano</a></li><li><a href="../ja/privacy.html" hreflang="ja">日本語</a></li><li><a href="../ru/privacy.html" hreflang="ru">Русский</a></li><li><a href="../sv/privacy.html" hreflang="sv">Svenska</a></li><li><a href="../tr/privacy.html" hreflang="tr">Türkçe</a></li></ul>
+  </section></main>
+  <footer><div class="footer-inner"><span>© Neo 4D Wall</span><a href="mailto:neo4dwall@gmail.com">neo4dwall@gmail.com</a></div></footer>
+</body>
+</html>
