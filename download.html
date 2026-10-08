@@ -26,7 +26,7 @@ body {
     radial-gradient(ellipse at 100% 80%, #29204f50 0, transparent 48%),
     #090d18;
 }
-button, input { font: inherit; }
+button, input, select { font: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
 button { cursor: pointer; }
 a { color: inherit; }
@@ -34,9 +34,9 @@ a { color: inherit; }
 .page { width: min(100%, 520px); margin: 0 auto; padding: 28px 24px 24px; }
 .topbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 0 2px 24px; }
 .wordmark { color: #d4dcee; font-size: 11px; font-weight: 650; letter-spacing: .14em; }
-.language-switch { display: flex; gap: 2px; border: 1px solid #273043; border-radius: 20px; padding: 3px; }
-.language-switch button { border: 0; background: transparent; color: #96a4bd; border-radius: 16px; min-width: 40px; min-height: 32px; padding: 4px 10px; font-size: 11px; font-weight: 600; }
-.language-switch button[aria-pressed="true"] { background: #253149; color: #fff; }
+.wordmark { direction: ltr; white-space: nowrap; }
+.language-switch { flex: 0 0 auto; }
+.language-switch select { border: 1px solid #344157; background: #152138; color: #e2eaf7; border-radius: 20px; max-width: 132px; min-height: 44px; padding: 6px 10px; font-size: 12px; cursor: pointer; }
 .card {
   position: relative;
   overflow: hidden;
@@ -50,7 +50,7 @@ a { color: inherit; }
 .app-mark::before { content: ""; position: absolute; inset: -12px; background: #156afb; filter: blur(34px); opacity: .23; }
 .app-mark img { position: relative; width: 104px; height: 104px; display: block; border-radius: 26px; box-shadow: 0 0 0 1px #85beff35, 0 10px 25px #0004; }
 .eyebrow { margin: 0 0 16px; text-align: center; font-size: 9px; font-weight: 650; letter-spacing: .14em; color: #92a7c7; line-height: 1.6; }
-h1 { margin: 0; text-align: center; font-size: clamp(38px, 10.4vw, 55px); font-weight: 650; line-height: 1.07; letter-spacing: -.055em; }
+h1 { margin: 0; text-align: center; font-size: clamp(34px, 9.5vw, 50px); font-weight: 650; line-height: 1.12; letter-spacing: -.04em; overflow-wrap: break-word; }
 h1 span { display: block; }
 .accent { color: #7cdaed; }
 .intro { max-width: 300px; margin: 19px auto 29px; text-align: center; color: #aebbd0; font-size: 14px; line-height: 1.65; text-wrap: balance; }
@@ -65,20 +65,25 @@ h1 span { display: block; }
 .play-button svg { flex: 0 0 auto; }
 .copy-button { display: inline-flex; align-items: center; gap: 8px; border: 0; background: transparent; color: #b7c6dc; font-size: 12px; min-height: 44px; margin: 6px 0 0; padding: 9px 0; }
 .copy-button:hover { color: #fff; }
+.copy-button svg { flex: 0 0 auto; }
 .copy-status { margin: 0; color: #96e4f1; font-size: 12px; }
 .copy-status:empty { display: none; }
-.manual-copy { margin-top: 8px; text-align: left; }
+.manual-copy { margin-top: 8px; text-align: start; }
 .manual-copy label { color: #aebbd0; font-size: 12px; }
 .manual-copy input { display: block; width: 100%; margin-top: 7px; background: #0a101c; border: 1px solid #344157; color: #dbe8f6; border-radius: 8px; padding: 11px; font-size: 12px; }
 .help { display: flex; gap: 12px; padding-top: 22px; margin-top: 16px; border-top: 1px solid #ffffff13; }
 .help-mark { flex: 0 0 25px; margin-top: 0; font-size: 21px; color: #7992b0; }
 .help h2 { margin: 0 0 7px; color: #d6dfed; font-size: 12px; font-weight: 600; line-height: 1.5; }
 .help p { margin: 0; color: #99a8be; font-size: 12px; line-height: 1.7; text-wrap: pretty; }
-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 23px 5px 0; color: #7f8da6; font-size: 11px; }
+footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 12px; margin: 23px 5px 0; color: #7f8da6; font-size: 11px; }
 footer nav { display: flex; align-items: center; gap: 12px; }
 footer a { text-decoration: none; padding: 8px 0; }
 footer a:hover { color: #dce9fb; text-decoration: underline; }
 .footer-dot { color: #47546c; }
+:lang(ar) h1, :lang(hi) h1, :lang(ja) h1 { letter-spacing: normal; line-height: 1.3; }
+:lang(ar) .eyebrow, :lang(hi) .eyebrow, :lang(ja) .eyebrow { letter-spacing: normal; }
+[dir="rtl"] .play-button svg { transform: scaleX(-1); }
+[dir="rtl"] .help-mark { transform: scaleX(-1); }
 :focus-visible { outline: 3px solid #c8f4fc; outline-offset: 4px; }
 @media (min-width: 600px) {
   .page { padding-top: 54px; }
@@ -97,9 +102,20 @@ footer a:hover { color: #dce9fb; text-decoration: underline; }
   <div class="page">
     <header class="topbar">
       <span class="wordmark">NEO 4D WALL</span>
-      <div class="language-switch" role="group" aria-label="Language" hidden>
-        <button type="button" data-language="en" lang="en" aria-label="English" aria-pressed="true">EN</button>
-        <button type="button" data-language="tr" lang="tr" aria-label="Türkçe" aria-pressed="false">TR</button>
+      <div class="language-switch" hidden>
+        <select id="language-select" aria-label="Language" dir="auto">
+          <option value="en" lang="en">English</option>
+          <option value="tr" lang="tr">Türkçe</option>
+          <option value="ar" lang="ar">العربية</option>
+          <option value="de" lang="de">Deutsch</option>
+          <option value="fr" lang="fr">Français</option>
+          <option value="es" lang="es">Español</option>
+          <option value="hi" lang="hi">हिन्दी</option>
+          <option value="it" lang="it">Italiano</option>
+          <option value="ja" lang="ja">日本語</option>
+          <option value="ru" lang="ru">Русский</option>
+          <option value="sv" lang="sv">Svenska</option>
+        </select>
       </div>
     </header>
 
@@ -121,7 +137,7 @@ footer a:hover { color: #dce9fb; text-decoration: underline; }
         <p id="copy-status" class="copy-status" role="status" aria-live="polite"></p>
         <div id="manual-copy" class="manual-copy" hidden>
           <label for="store-link" data-copy="manualCopy">Select and copy this link:</label>
-          <input id="store-link" type="text" readonly value="https://play.google.com/store/apps/details?id=com.neo4dwall.app" spellcheck="false">
+          <input id="store-link" type="text" dir="ltr" readonly value="https://play.google.com/store/apps/details?id=com.neo4dwall.app" spellcheck="false">
         </div>
       </div>
 
@@ -148,6 +164,170 @@ footer a:hover { color: #dce9fb; text-decoration: underline; }
     (() => {
       const storeUrl = 'https://play.google.com/store/apps/details?id=com.neo4dwall.app';
       const copy = {
+        // Additional supported languages
+"ar": {
+    "eyebrow": "مصمم لشاشة Android الخاصة بك",
+    "headlineTop": "شاشتك.",
+    "headlineBottom": "تنبض بالحركة.",
+    "intro": "اجعل شاشة Android تعكس ذوقك.",
+    "open": "افتح في Google Play",
+    "copy": "انسخ رابط Google Play",
+    "helpTitle": "الرابط لا يفتح؟",
+    "helpText": "افتح هذه الصفحة في متصفحك، أو ابحث عن «Neo 4D Wall» على Google Play.",
+    "privacy": "الخصوصية",
+    "support": "الدعم",
+    "copied": "تم نسخ الرابط.",
+    "manualCopy": "حدد هذا الرابط وانسخه:",
+    "title": "Neo 4D Wall · شاشتك تنبض بالحركة.",
+    "information": "معلومات",
+    "language": "اللغة",
+    "description": "ابحث عن Neo 4D Wall على Google Play واجعل شاشة Android تعكس ذوقك."
+  },
+  "de": {
+    "eyebrow": "FÜR DEIN ANDROID-DISPLAY",
+    "headlineTop": "Dein Display.",
+    "headlineBottom": "In Bewegung.",
+    "intro": "Gestalte dein Android-Display ganz nach deinem Stil.",
+    "open": "In Google Play öffnen",
+    "copy": "Link zu Google Play kopieren",
+    "helpTitle": "Der Link öffnet sich nicht?",
+    "helpText": "Öffne diese Seite in deinem Browser oder suche in Google Play nach „Neo 4D Wall“.",
+    "privacy": "Datenschutz",
+    "support": "Support",
+    "copied": "Link kopiert.",
+    "manualCopy": "Wähle diesen Link aus und kopiere ihn:",
+    "title": "Neo 4D Wall · Dein Display. In Bewegung.",
+    "information": "Informationen",
+    "language": "Sprache",
+    "description": "Finde Neo 4D Wall bei Google Play und gestalte dein Android-Display ganz nach deinem Stil."
+  },
+  "fr": {
+    "eyebrow": "POUR VOTRE ÉCRAN ANDROID",
+    "headlineTop": "Votre écran.",
+    "headlineBottom": "En mouvement.",
+    "intro": "Personnalisez votre écran Android à votre image.",
+    "open": "Ouvrir dans Google Play",
+    "copy": "Copier le lien Google Play",
+    "helpTitle": "Le lien ne s’ouvre pas ?",
+    "helpText": "Ouvrez cette page dans votre navigateur ou recherchez « Neo 4D Wall » sur Google Play.",
+    "privacy": "Confidentialité",
+    "support": "Assistance",
+    "copied": "Lien copié.",
+    "manualCopy": "Sélectionnez et copiez ce lien :",
+    "title": "Neo 4D Wall · Votre écran. En mouvement.",
+    "information": "Informations",
+    "language": "Langue",
+    "description": "Retrouvez Neo 4D Wall sur Google Play et personnalisez votre écran Android à votre image."
+  },
+  "es": {
+    "eyebrow": "PARA TU PANTALLA ANDROID",
+    "headlineTop": "Tu pantalla.",
+    "headlineBottom": "En movimiento.",
+    "intro": "Personaliza la pantalla de tu Android.",
+    "open": "Abrir en Google Play",
+    "copy": "Copiar enlace de Google Play",
+    "helpTitle": "¿El enlace no se abre?",
+    "helpText": "Abre esta página en tu navegador o busca «Neo 4D Wall» en Google Play.",
+    "privacy": "Privacidad",
+    "support": "Soporte",
+    "copied": "Enlace copiado.",
+    "manualCopy": "Selecciona y copia este enlace:",
+    "title": "Neo 4D Wall · Tu pantalla. En movimiento.",
+    "information": "Información",
+    "language": "Idioma",
+    "description": "Encuentra Neo 4D Wall en Google Play y personaliza la pantalla de tu Android."
+  },
+  "hi": {
+    "eyebrow": "आपकी Android स्क्रीन के लिए",
+    "headlineTop": "आपकी स्क्रीन पर",
+    "headlineBottom": "चलते नज़ारे।",
+    "intro": "अपनी Android स्क्रीन को अपना अंदाज़ दें।",
+    "open": "Google Play पर खोलें",
+    "copy": "Google Play लिंक कॉपी करें",
+    "helpTitle": "लिंक नहीं खुल रहा?",
+    "helpText": "इस पेज को अपने ब्राउज़र में खोलें या Google Play पर “Neo 4D Wall” खोजें।",
+    "privacy": "गोपनीयता",
+    "support": "सहायता",
+    "copied": "लिंक कॉपी हो गया।",
+    "manualCopy": "इस लिंक को चुनकर कॉपी करें:",
+    "title": "Neo 4D Wall · आपकी स्क्रीन पर चलते नज़ारे।",
+    "information": "जानकारी",
+    "language": "भाषा",
+    "description": "Google Play पर Neo 4D Wall खोजें और अपनी Android स्क्रीन को अपना अंदाज़ दें।"
+  },
+  "it": {
+    "eyebrow": "PER IL TUO SCHERMO ANDROID",
+    "headlineTop": "Il tuo schermo.",
+    "headlineBottom": "In movimento.",
+    "intro": "Personalizza lo schermo del tuo Android.",
+    "open": "Apri su Google Play",
+    "copy": "Copia il link di Google Play",
+    "helpTitle": "Il link non si apre?",
+    "helpText": "Apri questa pagina nel tuo browser oppure cerca «Neo 4D Wall» su Google Play.",
+    "privacy": "Privacy",
+    "support": "Assistenza",
+    "copied": "Link copiato.",
+    "manualCopy": "Seleziona e copia questo link:",
+    "title": "Neo 4D Wall · Il tuo schermo. In movimento.",
+    "information": "Informazioni",
+    "language": "Lingua",
+    "description": "Trova Neo 4D Wall su Google Play e personalizza lo schermo del tuo Android."
+  },
+  "ja": {
+    "eyebrow": "あなたのAndroidの画面のために",
+    "headlineTop": "あなたの画面に、",
+    "headlineBottom": "動きを。",
+    "intro": "Androidの画面を、あなたらしく。",
+    "open": "Google Playで開く",
+    "copy": "Google Playのリンクをコピー",
+    "helpTitle": "リンクが開かない場合",
+    "helpText": "このページをブラウザで開くか、Google Playで「Neo 4D Wall」を検索してください。",
+    "privacy": "プライバシー",
+    "support": "サポート",
+    "copied": "リンクをコピーしました。",
+    "manualCopy": "このリンクを選択してコピーしてください：",
+    "title": "Neo 4D Wall · あなたの画面に、動きを。",
+    "information": "情報",
+    "language": "言語",
+    "description": "Google PlayでNeo 4D Wallを見つけて、Androidの画面をあなたらしく。"
+  },
+  "ru": {
+    "eyebrow": "ДЛЯ ЭКРАНА ВАШЕГО ANDROID",
+    "headlineTop": "Ваш экран.",
+    "headlineBottom": "В движении.",
+    "intro": "Настройте экран Android под свой стиль.",
+    "open": "Открыть в Google Play",
+    "copy": "Скопировать ссылку Google Play",
+    "helpTitle": "Ссылка не открывается?",
+    "helpText": "Откройте эту страницу в браузере или найдите «Neo 4D Wall» в Google Play.",
+    "privacy": "Конфиденциальность",
+    "support": "Поддержка",
+    "copied": "Ссылка скопирована.",
+    "manualCopy": "Выделите и скопируйте эту ссылку:",
+    "title": "Neo 4D Wall · Ваш экран. В движении.",
+    "information": "Информация",
+    "language": "Язык",
+    "description": "Найдите Neo 4D Wall в Google Play и настройте экран Android под свой стиль."
+  },
+  "sv": {
+    "eyebrow": "FÖR DIN ANDROID-SKÄRM",
+    "headlineTop": "Din skärm.",
+    "headlineBottom": "I rörelse.",
+    "intro": "Gör din Android-skärm personlig.",
+    "open": "Öppna i Google Play",
+    "copy": "Kopiera länken till Google Play",
+    "helpTitle": "Öppnas inte länken?",
+    "helpText": "Öppna sidan i din webbläsare eller sök efter ”Neo 4D Wall” på Google Play.",
+    "privacy": "Integritet",
+    "support": "Support",
+    "copied": "Länken har kopierats.",
+    "manualCopy": "Markera och kopiera den här länken:",
+    "title": "Neo 4D Wall · Din skärm. I rörelse.",
+    "information": "Information",
+    "language": "Språk",
+    "description": "Hitta Neo 4D Wall på Google Play och gör din Android-skärm personlig."
+  },
+
         en: {
           eyebrow: 'MADE FOR YOUR ANDROID SCREEN',
           headlineTop: 'Your screen.', headlineBottom: 'In motion.',
@@ -175,29 +355,31 @@ footer a:hover { color: #dce9fb; text-decoration: underline; }
           description: 'Neo 4D Wall’ı Google Play’de bulun ve Android ekranınızı tarzınıza göre kişiselleştirin.'
         }
       };
-      let language = navigator.language.toLowerCase().startsWith('tr') ? 'tr' : 'en';
+      const preferredLanguages = navigator.languages?.length
+        ? navigator.languages : [navigator.language || 'en'];
+      let language = preferredLanguages
+        .map(value => String(value).toLowerCase().split(/[-_]/)[0])
+        .find(value => Object.hasOwn(copy, value)) || 'en';
       const languageSwitch = document.querySelector('.language-switch');
+      const languageSelect = document.getElementById('language-select');
       const copyButton = document.getElementById('copy-link');
       const status = document.getElementById('copy-status');
       function setLanguage(next) {
+        if (!Object.hasOwn(copy, next)) next = 'en';
         language = next;
         document.documentElement.lang = next;
+        document.documentElement.dir = next === 'ar' ? 'rtl' : 'ltr';
         document.title = copy[next].title;
         document.querySelector('meta[name="description"]').content = copy[next].description;
         document.querySelectorAll('[data-copy]').forEach(element => {
           element.textContent = copy[next][element.dataset.copy];
         });
-        document.querySelectorAll('[data-language]').forEach(button => {
-          button.setAttribute('aria-pressed', String(button.dataset.language === next));
-        });
-        languageSwitch.setAttribute('aria-label', copy[next].language);
+        languageSelect.value = next;
+        languageSelect.setAttribute('aria-label', copy[next].language);
         document.querySelector('footer nav').setAttribute('aria-label', copy[next].information);
         status.textContent = '';
       }
-      languageSwitch.addEventListener('click', event => {
-        const button = event.target.closest('[data-language]');
-        if (button) setLanguage(button.dataset.language);
-      });
+      languageSelect.addEventListener('change', () => setLanguage(languageSelect.value));
       copyButton.addEventListener('click', async () => {
         try {
           await navigator.clipboard.writeText(storeUrl);
